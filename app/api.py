@@ -56,7 +56,7 @@ def power(op_1, op_2):
     except TypeError as e:
         return (str(e), http.client.BAD_REQUEST, HEADERS)
     
-@api_application.route("/calc/square/<op_1>", methods=["GET"])
+@api_application.route("/calc/square/<op_1>/<op_2>", methods=["GET"])
 def square(op_1):
     try:
         num_1 = util.convert_to_number(op_1)
@@ -64,7 +64,7 @@ def square(op_1):
     except TypeError as e:
         return (str(e), http.client.BAD_REQUEST, HEADERS)
     
-@api_application.route("/calc/log10/<op_1>", methods=["GET"])
+@api_application.route("/calc/log10/<op_1>/<op_2>", methods=["GET"])
 def log10(op_1):
     try:
         num_1= util.convert_to_number(op_1)

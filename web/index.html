@@ -83,10 +83,10 @@
             this.apiCall('power', this.op1, this.op2);
           },
           square: function() {
-            this.apiCall('square', this.op1);
+            this.apiCall('square', this.op1, this.op2);
           },
           log10: function() {
-            this.apiCall('log10', this.op1);
+            this.apiCall('log10', this.op1, this.op2);
           },
           apiCall: function(func, op1, op2) {
             var url = `${baseUrl}/calc/${func}/${op1}/${op2}`;
