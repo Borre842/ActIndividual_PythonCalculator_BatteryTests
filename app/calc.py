@@ -1,5 +1,4 @@
 from math import log10, sqrt
-import app
 
 
 class InvalidPermissions(Exception):
@@ -50,5 +49,6 @@ class Calculator:
 
 if __name__ == "__main__":  # pragma: no cover
     calc = Calculator()
-    result = calc.add(2, 2)
+    #result = calc.add(2, 2)
+    result = calc.log10(10, 0)
     print(result)
