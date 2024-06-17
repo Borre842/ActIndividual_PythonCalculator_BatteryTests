@@ -1,3 +1,4 @@
+from math import log, log10, sqrt
 import app
 
 
@@ -30,7 +31,17 @@ class Calculator:
 
     def power(self, x, y):
         self.check_types(x, y)
-        return x ** y
+        return pow(x, y)
+    
+    def square(self, x):
+        self.check_types(x)
+        return sqrt(x)
+    
+    def log10(self, x):
+        self.check_types(x)
+        if x <= 0:
+            raise TypeError("To use log10 please enter a number greater than 0")
+        return log10(x)
 
     def check_types(self, x, y):
         if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
