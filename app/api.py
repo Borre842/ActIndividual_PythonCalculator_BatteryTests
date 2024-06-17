@@ -57,7 +57,7 @@ def power(op_1, op_2):
         return (str(e), http.client.BAD_REQUEST, HEADERS)
     
 @api_application.route("/calc/square/<op_1>/<op_2>", methods=["GET"])
-def square(op_1):
+def square(op_1, op_2):
     try:
         num_1 = util.convert_to_number(op_1)
         return ("{}".format(CALCULATOR.square(num_1)), http.client.OK, HEADERS)
@@ -65,7 +65,7 @@ def square(op_1):
         return (str(e), http.client.BAD_REQUEST, HEADERS)
     
 @api_application.route("/calc/log10/<op_1>/<op_2>", methods=["GET"])
-def log10(op_1):
+def log10(op_1, op_2):
     try:
         num_1= util.convert_to_number(op_1)
         return ("{}".format(CALCULATOR.log10(num_1)), http.client.OK, HEADERS)
