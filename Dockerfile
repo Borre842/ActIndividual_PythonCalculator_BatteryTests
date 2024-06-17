@@ -5,4 +5,4 @@ RUN mkdir -p /opt/calc
 WORKDIR /opt/calc
 
 COPY requires ./
-RUN pip install -r requires
+RUN pip install --no-cache-dir -r requires
