@@ -33,12 +33,12 @@ class Calculator:
         self.check_types(x, y)
         return pow(x, y)
     
-    def square(self, x):
-        self.check_types(x)
+    def square(self, x, y):
+        self.check_types(x, y)
         return sqrt(x)
     
-    def log10(self, x):
-        self.check_types(x)
+    def log10(self, x, y):
+        self.check_types(x, y)
         if x <= 0:
             raise TypeError("To use log10 please enter a number greater than 0")
         return log10(x)
