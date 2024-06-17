@@ -36,12 +36,18 @@
         <div>
           Operand 1: <input id="in-op1" v-model="op1" />
           Operand 2: <input id="in-op2" v-model="op2" />
+          <br>
         </div>
         <div>
           <button id="button-add" v-on:click="add()">+</button>
           <button id="button-substract" v-on:click="substract()">-</button>
+          <button id="button-divide" v-on:click="divide()">/</button>
+          <button id="button-multiply" v-on:click="multiply()">*</button>
+          <button id="button-power" v-on:click="power()">^</button>
+          <button id="button-square" v-on:click="square()">√</button>
+          <button id="button-log10" v-on:click="log10()">log10</button>
         </div>
-        <div id="result-area">Result: {{ result  }}</div>
+        <div id="result-area"><br>Result: {{ result  }}</div>
         <div>
           History:
           <ul id="history-log">
@@ -66,6 +72,21 @@
           },
           substract: function() {
             this.apiCall('substract', this.op1, this.op2);
+          },
+          divide: function() {
+            this.apiCall('divide', this.op1, this.op2);
+          },
+          multiply: function() {
+            this.apiCall('multiply', this.op1, this.op2);
+          },
+          power: function() {
+            this.apiCall('power', this.op1, this.op2);
+          },
+          square: function() {
+            this.apiCall('square', this.op1);
+          },
+          log10: function() {
+            this.apiCall('log10', this.op1);
           },
           apiCall: function(func, op1, op2) {
             var url = `${baseUrl}/calc/${func}/${op1}/${op2}`;
