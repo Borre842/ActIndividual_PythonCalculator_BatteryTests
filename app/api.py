@@ -67,8 +67,8 @@ def square(op_1, op_2):
 @api_application.route("/calc/log10/<op_1>/<op_2>", methods=["GET"])
 def log10(op_1, op_2):
     try:
-        num_2 = util.conert_to_number(op_2) 
-        num_1= util.convert_to_number(op_1) 
+        num_2 = util.convert_to_number(op_2) 
+        num_1 = util.convert_to_number(op_1) 
         return ("{}".format(CALCULATOR.log10(num_1, num_2)), http.client.OK, HEADERS)
     except TypeError as e:
         return (str(e), http.client.BAD_REQUEST, HEADERS)
